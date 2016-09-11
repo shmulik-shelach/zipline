@@ -328,8 +328,9 @@ def run_algorithm(start,
     if not non_none_data:
         # if neither data nor bundle are passed use 'quantopian-quandl'
         bundle = 'quantopian-quandl'
+        non_none_data['bundle'] = True
 
-    if len(non_none_data) != 1:
+    elif len(non_none_data) != 1:
         raise ValueError(
             'must specify one of `data`, `data_portal`, or `bundle`,'
             ' got: %r' % non_none_data,
